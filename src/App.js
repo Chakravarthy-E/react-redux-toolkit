@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Profile from "./components/Profile";
+import Login from "./components/Login";
+import ChangeColor from "./components/ChangeColor";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import CounterFn from "./components/CounterFn";
 
-function App() {
+const App = () => {
+  const theme = useSelector((state) => state.theme.value);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div
+        style={{
+          backgroundColor: theme,
+          height: "100vh",
+        }}
+      >
+        <Profile />
+        <Login />
+        <ChangeColor />
+        <CounterFn />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
