@@ -6,14 +6,14 @@ const Login = () => {
   const dispatch = useDispatch();
 
   return (
-    <>
+    <div>
       <button
         onClick={() => {
           dispatch(
             login({
-              name: "Chakri",
+              name: "Chakravarthy",
               age: 24,
-              email: "chakri@gamil.com",
+              email: "chakravarthy@gmail.com",
             })
           );
         }}
@@ -24,16 +24,16 @@ const Login = () => {
         onClick={() => {
           dispatch(
             logout({
-              name: "Chakri",
+              name: "Chakravarthy",
               age: 24,
-              email: "chakri@gamil.com",
+              email: "chakravarthy@gamil.com",
             })
           );
         }}
       >
         logout
       </button>
-    </>
+    </div>
   );
 };
 
